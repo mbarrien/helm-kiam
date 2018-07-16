@@ -80,6 +80,10 @@ agent:
   ##
   gatewayTimeoutCreation: 50ms
 
+  ## Proxy routes matching this regular expression only
+  ##
+  whitelistRouteRegexp: ^$
+
   ## Base64-encoded PEM values for agent's CA certificate(s), certificate and private key
   ##
   tlsFiles:
