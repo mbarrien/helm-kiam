@@ -70,7 +70,7 @@ Parameter | Description | Default
 `agent.enabled` | If true, create agent | `true`
 `agent.name` | Agent container name | `agent`
 `agent.image.repository` | Agent image | `quay.io/uswitch/kiam`
-`agent.image.tag` | Agent image tag | `v2.8`
+`agent.image.tag` | Agent image tag | `v2.7`
 `agent.image.pullPolicy` | Agent image pull policy | `IfNotPresent`
 `agent.dnsPolicy` | Agent pod DNS policy | `ClusterFirstWithHostNet`
 `agent.extraArgs` | Additional agent container arguments | `{}`
@@ -99,7 +99,7 @@ Parameter | Description | Default
 `server.name` | Server container name | `server`
 `server.gatewayTimeoutCreation` | Server's timeout when creating the kiam gateway | `50ms`
 `server.image.repository` | Server image | `quay.io/uswitch/kiam`
-`server.image.tag` | Server image tag | `v2.8`
+`server.image.tag` | Server image tag | `v2.7`
 `server.image.pullPolicy` | Server image pull policy | `Always`
 `server.assumeRoleArn` | IAM role for the server to assume before processing requests | `null`
 `server.cache.syncInterval` | Pod cache synchronization interval | `1m`
