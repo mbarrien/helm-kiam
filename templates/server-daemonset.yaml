@@ -105,7 +105,9 @@ spec:
                 - --server-address=localhost:{{ .Values.server.service.targetPort }}
                 - --server-address-refresh=2s
                 - --timeout=5s
+                {{- if semverCompare ">=2.8" .Values.server.image.tag }}
                 - --gateway-timeout-creation={{ .Values.server.gatewayTimeoutCreation }}
+                {{- end }}
             initialDelaySeconds: 10
             periodSeconds: 10
             timeoutSeconds: 10
@@ -119,7 +121,9 @@ spec:
                 - --server-address=localhost:{{ .Values.server.service.targetPort }}
                 - --server-address-refresh=2s
                 - --timeout=5s
+                {{- if semverCompare ">=2.8" .Values.server.image.tag }}
                 - --gateway-timeout-creation={{ .Values.server.gatewayTimeoutCreation }}
+                {{- end }}
             initialDelaySeconds: 3
             periodSeconds: 10
             timeoutSeconds: 10

@@ -79,7 +79,9 @@ spec:
             - --server-address={{ template "kiam.fullname" . }}-server:{{ .Values.server.service.port }}
             - --prometheus-listen-addr=0.0.0.0:{{ .Values.agent.prometheus.port }}
             - --prometheus-sync-interval={{ .Values.agent.prometheus.syncInterval }}
+            {{- if semverCompare ">=2.8" .Values.agent.image.tag }}
             - --gateway-timeout-creation={{ .Values.agent.gatewayTimeoutCreation }}
+            {{- end }}
           {{- range $key, $value := .Values.agent.extraArgs }}
             {{- if $value }}
             - --{{ $key }}={{ $value }}
